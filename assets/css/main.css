@@ -74,18 +74,24 @@ table {
 	position: relative;
 	top: 50%;
 	transform: translateY(-50%);
+	height: auto;
 }
 
 
-.hook h1 {
+#title {
 	margin-bottom: .5em;
 	font-size: 60px;
 	font-weight: 300;
 	font-family: 'Comfortaa', 'Lato', sans-serif;
+	padding-bottom: .5em;
+	opacity: 0;
+	transition: all .6s ease-in-out;
 }
 
 .hook p {
+	opacity: 0;
 	font-size: 20px;
+	transition: all .8s ease-in-out;
 }
 
 .hook a {
@@ -97,4 +103,13 @@ table {
 
 .hook a:hover {
 	color: #E11A7B;
+}
+
+#title.loaded {
+	opacity: 1;
+	padding-bottom: 0;
+}
+
+#title.loaded ~ p {
+	opacity: 1;
 }
