@@ -3,10 +3,11 @@
    ========= */
 @import url(https://fonts.googleapis.com/css?family=Lato:400,100,400italic,700,300);
 @import url(https://fonts.googleapis.com/css?family=Comfortaa:300);
+@import url(https://fonts.googleapis.com/css?family=Share+Tech+Mono);
 /* ===========
    Meyer Reset
    =========== */
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -20,8 +21,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -32,7 +33,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -59,22 +60,43 @@ table {
    My Styles
    ========= */
 
-.intro {
-	width: 100vw;
-	height: 100vh;
-	background-image: url(../images/lowPoly.jpg);
-	background-size: cover;
-	background-position: center;
+html, body {
+	height: 100%;
+}
+body {
 	font-family: 'Lato', sans-serif;
 	color: white;
 	text-align: center;
+	-webkit-font-smoothing: antialiased;
 }
 
-.hook {
+.intro {
+	height: 100%;
 	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
+}
+
+.intro:before {
+	content: "";
+	display: block;
+	height: inherit;
+	width: inherit;
+	background-attachment: fixed;
+	opacity: 50%;
+	background-image: url(../images/lowPoly.jpg);
+	background-size: cover;
+	background-position: center;
+	z-index: -1;
+	-webkit-filter: brightness(.9);
+	        filter: brightness(.9);
+}
+
+.about-text {
+	position: absolute;
+	top: 50%; left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%s);
 	height: auto;
+	z-index: 100;
 }
 
 
@@ -82,27 +104,30 @@ table {
 	margin-bottom: .5em;
 	font-size: 60px;
 	font-weight: 300;
-	font-family: 'Comfortaa', 'Lato', sans-serif;
+	font-family: 'Comfortaa', sans-serif;
 	padding-bottom: .5em;
 	opacity: 0;
+	-webkit-transition: all .6s ease-in-out;
 	transition: all .6s ease-in-out;
 }
 
-.hook p {
+.about-text p {
 	opacity: 0;
 	font-size: 20px;
-	transition: all .8s ease-in-out;
+	-webkit-transition: all 1s ease-in-out;
+	transition: all 1s ease-in-out;
 }
 
-.hook a {
+.about-text a {
 	text-decoration: none;
 	color: inherit;
 	font-style:italic;
+	-webkit-transition: color .2s ease-in-out;
 	transition: color .2s ease-in-out;
 }
 
-.hook a:hover {
-	color: #E11A7B;
+.about-text a:hover {
+	color: #e01a7b;
 }
 
 #title.loaded {
@@ -112,4 +137,38 @@ table {
 
 #title.loaded ~ p {
 	opacity: 1;
+}
+
+section {
+	width: 100%;
+	min-height: 200px;
+}
+
+.about {
+	background: white;
+	padding-top: 2em;
+	color: black;
+}
+
+.about p {
+	text-align: justify;
+	padding: 1em 3em 1em 1em;
+}
+
+.about p:last-child {
+	padding-bottom: 3em;
+}
+
+.section-title {
+	font-size: 2em;
+	font-family: 'Comfortaa';
+}
+
+
+.info img {
+	display: inline;
+}
+
+::selection {
+	background: pink;
 }

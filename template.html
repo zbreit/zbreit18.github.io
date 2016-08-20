@@ -1,0 +1,55 @@
+<style id="style">
+  #completed-trigger {
+    margin-top: 2em;
+    cursor: pointer;
+    border: 1px solid #5594d2;
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+    font-family: Helvetica, sans-serif;
+    width: 50px;
+    margin: 0 auto;
+    border-radius: 3px;
+    color: #5594d2;
+    background-color: white;
+    transition: all 500ms ease-in-out;
+  }
+  #completed-trigger:hover {
+    border: 1px solid white;
+    background: #5594d2;
+    color: white;
+  }
+</style>
+<div class="email-bg" style="margin: 0 auto;max-width: 600px;">
+<div class="pre-header" style="font-size: 0px;color: transparent;">HackUC would like to ask for your help.</div>
+
+<div class="email-container" style="background: white;font-family: Helvetica, sans-serif;overflow: hidden;margin: 0 20px;text-align: left;max-width: 100%;">
+  <img src="http://hackuc.com/logo.png" alt="HackUC" style="width: 80px;height: 80px;display: inline-block;vertical-align: middle;">
+  <h1 style="font-size: 32px;font-weight: 600;display: inline-block;margin: 0;margin-left: 0.5em;vertical-align: middle;"><span class="light" style="font-weight: 100;">Hack</span>UC</h1>
+  <hr style="display: block;border: none;color: #000;background-color: #000;height: 3px;max-width: 100%;margin: 0.75em auto 2em;">
+
+<pre id="email-content" contenteditable="true" style="max-width: 100%;display: block;font-family: Helvetica, sans-serif;font-size: 16px;line-height: 1.5;white-space: pre-wrap;word-wrap: break-word;font-weight: 300;text-align: justify;margin: 0 auto;">
+Dear Potential Sponsor,
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, quisquam, odit doloremque reprehenderit accusantium totam sapiente officia. Provident maxime vero incidunt tempore facere quas, eaque. Earum dolorum, nesciunt tenetur neque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, quisquam, odit doloremque reprehenderit accusantium totam sapiente officia. Provident maxime vero incidunt tempore facere quas, eaque. Earum dolorum, nesciunt tenetur neque.
+
+Sincerely,
+Zach Breit
+</pre>
+
+</div>
+</div>
+<div id="completed-trigger">Done?</div>
+
+<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+<script type="text/javascript">
+  $('#completed-trigger').on('click', function(){
+    $('#email-content').removeAttr('contenteditable');
+    $(this).remove();
+    $('#style').remove();
+    $('script').each(function() {
+      $(this).remove();
+    })
+  });
+
+</script>
