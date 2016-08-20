@@ -20,9 +20,20 @@
     background: #5594d2;
     color: white;
   }
+  #pre-header,
+  #pre-header-desc {
+    margin: 1em auto 1em;
+    font-family: Helvetica, sans-serif;
+    max-width: 500px;
+  }
+  #pre-header-desc {
+    color: #aaa;
+  }
 </style>
 <div class="email-bg" style="margin: 0 auto;max-width: 600px;">
-<div class="pre-header" style="font-size: 0px;color: transparent;">HackUC would like to ask for your help.</div>
+
+<div id="pre-header" contenteditable="true">HackUC would like to ask for your help.</div>
+<div id="pre-header-desc">The above line of text is editable. It will not be visible in the actual email, but will represent the text preview that appears in your email client.</div>
 
 <div class="email-container" style="background: white;font-family: Helvetica, sans-serif;overflow: hidden;margin: 0 20px;text-align: left;max-width: 100%;">
   <img src="http://hackuc.com/logo.png" alt="HackUC" style="width: 80px;height: 80px;display: inline-block;vertical-align: middle;">
@@ -35,7 +46,7 @@ Dear Potential Sponsor,
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, quisquam, odit doloremque reprehenderit accusantium totam sapiente officia. Provident maxime vero incidunt tempore facere quas, eaque. Earum dolorum, nesciunt tenetur neque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, quisquam, odit doloremque reprehenderit accusantium totam sapiente officia. Provident maxime vero incidunt tempore facere quas, eaque. Earum dolorum, nesciunt tenetur neque.
 
 Sincerely,
-Zach Breit
+[Insert Name Here]
 </pre>
 
 </div>
@@ -46,6 +57,12 @@ Zach Breit
 <script type="text/javascript">
   $('#completed-trigger').on('click', function(){
     $('#email-content').removeAttr('contenteditable');
+    $('#pre-header').removeAttr('contenteditable');
+    $('#pre-header').css({
+      'color': 'transparent',
+      'font-size': '0px'
+    });
+    $('#pre-header-desc').remove();
     $(this).remove();
     $('#style').remove();
     $('script').each(function() {
